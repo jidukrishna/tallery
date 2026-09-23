@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="bar" style="border-color: {{ACCENT_COLOR}};">
+    <h1 data-editable="title">{{TITLE}}</h1>
+    <span class="date-range">{{DATE_RANGE}}</span>
+  </header>
+  <main class="gallery-grid">
+    <!--GALLERY_ITEM_START-->
+    <figure class="gallery-item">
+      <img src="assets/{{IMAGE_FILE}}" alt="{{IMAGE_ALT}}" loading="lazy" />
+    </figure>
+    <!--GALLERY_ITEM_END-->
+  </main>
+</body>
+</html>
+

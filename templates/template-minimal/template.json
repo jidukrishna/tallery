@@ -1,0 +1,10 @@
+{
+  "id": "template-minimal",
+  "name": "Minimal",
+  "description": "Full-bleed photo grid with a single-line title bar.",
+  "thumbnail": "preview.png",
+  "regions": ["header", "gallery-grid"],
+  "supportsFields": ["title", "dateRange", "accentColor"],
+  "editableFields": ["title"]
+}
+

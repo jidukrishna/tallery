@@ -1,0 +1,10 @@
+{
+  "id": "template-classic",
+  "name": "Classic Grid",
+  "description": "A clean centered hero with a responsive photo grid below.",
+  "thumbnail": "preview.png",
+  "regions": ["hero", "gallery-grid", "footer"],
+  "supportsFields": ["title", "description", "dateRange", "accentColor"],
+  "editableFields": ["title", "description"]
+}
+

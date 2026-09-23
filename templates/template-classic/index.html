@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body style="--accent: {{ACCENT_COLOR}};">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="accent-badge"></div>
+      <h1 data-editable="title">{{TITLE}}</h1>
+      <p data-editable="description">{{DESCRIPTION}}</p>
+      <div class="meta-bar">
+        <span class="date-range">{{DATE_RANGE}}</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="gallery-wrapper">
+    <div class="gallery-grid">
+      <!--GALLERY_ITEM_START-->
+      <figure class="gallery-item">
+        <img src="assets/{{IMAGE_FILE}}" alt="{{IMAGE_ALT}}" loading="lazy" />
+      </figure>
+      <!--GALLERY_ITEM_END-->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Created with TripGallery</p>
+  </footer>
+
+  <!-- Simple offline lightbox modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-close"></div>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const closeBtn = document.getElementById('lightbox-close');
+
+      document.querySelectorAll('.gallery-item img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxCaption.textContent = img.alt || '';
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
+</body>
+</html>
+
