@@ -39,7 +39,7 @@
 ### 2. Installation
 Clone the repository and install dependencies:
 ```bash
-git clone https://github.com/your-username/tallery.git
+git clone https://github.com/jidukrishna/tallery.git
 cd tallery
 npm install
 ```
