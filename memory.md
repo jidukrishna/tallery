@@ -134,6 +134,7 @@ Append-only. Each entry: `D<n> — <date> — <decision> — <why>`.
 - `memory.md` — project state and decisions log
 - `templates.md` — template authoring guide & schema
 - `docs.md` — comprehensive project documentation
+- `README.md` — project readme and quick start guide
 - `server/`
   - `index.js` — Express backend entry point
   - `services/albumStore.js` — JSON flat-file storage manager
